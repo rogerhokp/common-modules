@@ -55,24 +55,30 @@ const init = (_path, _version) => {
 
 
 };
-const logger = ({ object, action, payload, userId, date = Date.now() }) => httpPost({
-    hostname,
-    port,
-    path: '/' + version + '/log',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-        object, action, payload, userId, date
-    })
-});
+const logger = ({ object, action, payload, userId, date = Date.now() }) => {
+    try {
+        httpPost({
+            hostname,
+            port,
+            path: '/' + version + '/log',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                object, action, payload, userId, date
+            })
+        });
 
+    } catch (e) {
+        console.error('logger error', e);
+    }
 
-// import AuditLoggerModule from './AuditLoggerModule';
+};
+import AuditLoggerModule from './AuditLoggerModule';
 import AuditLoggerService from './AuditLoggerService';
 
 export {
-    // AuditLoggerModule,
+    AuditLoggerModule,
     AuditLoggerService,
     logger, init
 };
