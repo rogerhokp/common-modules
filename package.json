@@ -1,6 +1,6 @@
 {
   "name": "audit-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "rogerhokp",
   "licence": "MIT",
   "main":"index.js"
