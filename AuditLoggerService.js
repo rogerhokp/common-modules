@@ -1,5 +1,5 @@
 
-const { init, logger } = rquire('index');
+const { init, logger } = require('index');
 
 module.expoerts = class AuditLoggerService {
 
