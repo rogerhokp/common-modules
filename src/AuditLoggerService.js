@@ -1,6 +1,6 @@
 
 import { init, logger } from './index';
-import { Injectable, Dependencies } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export default class AuditLoggerService {

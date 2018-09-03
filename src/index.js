@@ -68,10 +68,12 @@ const logger = ({ object, action, payload, userId, date = Date.now() }) => httpP
 });
 
 
-import AuditLoggerModule from './AuditLoggerModule';
+// import AuditLoggerModule from './AuditLoggerModule';
+import AuditLoggerService from './AuditLoggerService';
 
-export default {
-    AuditLoggerModule,
+export {
+    // AuditLoggerModule,
+    AuditLoggerService,
     logger, init
 };
 
