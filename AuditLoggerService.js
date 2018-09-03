@@ -1,7 +1,7 @@
 
-const { init, logger } = require('index');
+const { init, logger } = require('./index');
 
-module.expoerts = class AuditLoggerService {
+module.exports = class AuditLoggerService {
 
     constructor(path, version) {
         init(path, version);
