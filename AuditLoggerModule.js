@@ -1,4 +1,4 @@
-import { AuditLoggerService } from './AuditLoggerService';
+const { AuditLoggerService } = require('./AuditLoggerService');
 
 export class AuditLoggerModule {
  static forRoot(path, version) {
