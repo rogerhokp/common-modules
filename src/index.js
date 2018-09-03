@@ -68,5 +68,9 @@ export const logger = ({ object, action, payload, userId, date = Date.now() }) =
 });
 
 
+import AuditLoggerModule from './AuditLoggerModule';
 
-export const AuditLoggerService = require('./AuditLoggerService');
+export {
+    AuditLoggerModule
+};
+
