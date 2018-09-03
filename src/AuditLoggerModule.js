@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 
 
 @Module({})
-export default class AuditLoggerModule {
+class AuditLoggerModule {
   static forRoot(path, version) {
     const providers = [
       {
@@ -18,3 +18,5 @@ export default class AuditLoggerModule {
     };
   }
 }
+ 
+export default AuditLoggerModule;
