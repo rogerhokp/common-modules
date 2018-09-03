@@ -1,5 +1,7 @@
 let hostname, http, port, version;
 
+
+
 const httpPost = ({ body, ...options }) => new Promise((resolve, reject) => {
     const req = http.request({
         method: 'POST',
@@ -63,3 +65,5 @@ module.exports.logger = ({ object, action, payload, userId, date = Date.now() })
         object, action, payload, userId, date
     })
 });
+
+module.exports.LoggerService = require('./LoggerService.js');
