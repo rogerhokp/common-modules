@@ -1,0 +1,17 @@
+import { AuditLoggerService } from './AuditLoggerService';
+
+export class AuditLogModule {
+ static forRoot(path, version) {
+    const providers =  [   
+        {
+            provide: AuditLoggerService,
+            useFactory: () => new AuditLoggerService(path, version)
+        }
+    ];
+    return {
+      module: AuditLogModule,
+      providers: providers,
+      exports: providers,
+    };
+  }
+}
