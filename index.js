@@ -66,4 +66,4 @@ module.exports.logger = ({ object, action, payload, userId, date = Date.now() })
     })
 });
 
-module.exports.LoggerService = require('./LoggerService.js');
+module.exports.AuditLoggerService = require('./AuditLoggerService.js');
