@@ -78,7 +78,7 @@ import AuditLoggerModule from './AuditLoggerModule';
 import AuditLoggerService from './AuditLoggerService';
 
 export {
-    AuditLoggerModule,
+    // AuditLoggerModule,
     AuditLoggerService,
     logger, init
 };
