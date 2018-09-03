@@ -1,6 +1,6 @@
 const { AuditLoggerService } = require('./AuditLoggerService');
 
-export class AuditLoggerModule {
+module.exports = class AuditLoggerModule {
  static forRoot(path, version) {
     const providers =  [   
         {
