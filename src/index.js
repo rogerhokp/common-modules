@@ -42,7 +42,7 @@ const httpPost = ({ body, ...options }) => new Promise((resolve, reject) => {
 });
 
 
-export const init = (_path, _version) => {
+const init = (_path, _version) => {
     if (_path.startsWith('https://')) {
         http = require('https');
     } else {
@@ -55,7 +55,7 @@ export const init = (_path, _version) => {
 
 
 };
-export const logger = ({ object, action, payload, userId, date = Date.now() }) => httpPost({
+const logger = ({ object, action, payload, userId, date = Date.now() }) => httpPost({
     hostname,
     port,
     path: '/' + version + '/log',
@@ -70,7 +70,8 @@ export const logger = ({ object, action, payload, userId, date = Date.now() }) =
 
 import AuditLoggerModule from './AuditLoggerModule';
 
-export {
-    AuditLoggerModule
+export default {
+    AuditLoggerModule,
+    logger, init
 };
 
