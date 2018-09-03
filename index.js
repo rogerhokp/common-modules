@@ -1,4 +1,4 @@
-let hostname, http, port;
+let hostname, http, port, version;
 
 const httpPost = ({ body, ...options }) => new Promise((resolve, reject) => {
     const req = http.request({
@@ -39,7 +39,7 @@ const httpPost = ({ body, ...options }) => new Promise((resolve, reject) => {
     req.end();
 });
 
-module.exports.init = (_path) => {
+module.exports.init = (_path, _version) => {
     if (_path.startsWith('https://')) {
         http = require('https');
     } else {
@@ -48,13 +48,14 @@ module.exports.init = (_path) => {
     const cmpt = _path.replace(/http(s*):\/\//, '').split(':');
     hostname = cmpt[0];
     port = cmpt[1] || 8080;
+    version = _version;
 
 
 };
 module.exports.logger = ({ object, action, payload, userId, date = Date.now() }) => httpPost({
     hostname,
     port,
-    path: '/v1.0/log',
+    path: '/'+version+'/log',
     headers: {
         'Content-Type': 'application/json',
     },
