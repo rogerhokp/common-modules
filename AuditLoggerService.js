@@ -1,9 +1,7 @@
 
-import { Injectable } from '@nestjs/common';
-import { init, logger } from 'audit-logger';
+const { init, logger } = rquire('index');
 
-@Injectable()
-export default class AuditLoggerService {
+module.expoerts = class AuditLoggerService {
 
     constructor(path, version) {
         init(path, version);
