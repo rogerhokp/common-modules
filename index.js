@@ -57,7 +57,7 @@ module.exports.init = (_path, _version) => {
 module.exports.logger = ({ object, action, payload, userId, date = Date.now() }) => httpPost({
     hostname,
     port,
-    path: '/'+version+'/log',
+    path: '/' + version + '/log',
     headers: {
         'Content-Type': 'application/json',
     },
@@ -66,4 +66,6 @@ module.exports.logger = ({ object, action, payload, userId, date = Date.now() })
     })
 });
 
-module.exports.AuditLoggerModule = require('./AuditLoggerModule.js');
+ 
+
+module.exports.AuditLoggerService = require('./AuditLoggerService');
