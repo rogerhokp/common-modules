@@ -1,6 +1,6 @@
 import { AuditLoggerService } from './AuditLoggerService';
 
-export class AuditLogModule {
+export class AuditLoggerModule {
  static forRoot(path, version) {
     const providers =  [   
         {
@@ -9,7 +9,7 @@ export class AuditLogModule {
         }
     ];
     return {
-      module: AuditLogModule,
+      module: AuditLoggerModule,
       providers: providers,
       exports: providers,
     };
