@@ -1,0 +1,7 @@
+{
+  "name": "audit-logger",
+  "version": "1.0.0",
+  "publisher": "rogerhokp",
+  "licence": "MIT",
+  "main":"index.js"
+}
