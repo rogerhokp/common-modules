@@ -75,9 +75,11 @@ const logger = ({ object, action, payload, userId, date = Date.now() }) => {
 
 };
 import AuditLoggerService from './AuditLoggerService';
+import EmailSendService from './EmailSendService';
 
 export {
     AuditLoggerService,
+    EmailSendService,
     logger, init
 };
 
