@@ -39,6 +39,7 @@ module.exports = {
       generators: true,
       experimentalObjectRestSpread: true,
       experimentalDecorators: true,
+      legacyDecorators: true
     }
   },
   parser: "babel-eslint",
