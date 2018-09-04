@@ -1,5 +1,4 @@
 
-import { init, logger } from './index';
 import { Injectable } from '@nestjs/common';
 import sgMail from '@sendgrid/mail';
 
@@ -7,11 +6,22 @@ import sgMail from '@sendgrid/mail';
 @Injectable()
 export default class EmailSendService {
 
+    /**
+     * 
+     * @param {string} apiKey 
+     * @param {string} emailFrom 
+     */
     constructor(apiKey, emailFrom) {
         sgMail.setApiKey(apiKey);
         this.emailFrom = emailFrom;
     }
 
+    /**
+     * 
+     * @param {Array<string>} mailTos 
+     * @param {string} subject 
+     * @param {string} content 
+     */
     send(mailTos, subject, content) {
         const msg = {
             to: mailTos,
@@ -19,7 +29,7 @@ export default class EmailSendService {
             subject: subject,
             html: content,
         };
-        sgMail.send(msg);
+        return sgMail.send(msg);
     }
 
 }
