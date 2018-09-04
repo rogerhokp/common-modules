@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import AuditLoggerModule from './AuditLoggerModule';
 
 @Module({})
-export class MongooseModule {
+export default class CommonModule {
     static forRoot({ loggerPath, loggerVersion }) {
         return {
-            module: MongooseModule,
+            module: CommonModule,
             imports: [AuditLoggerModule.forRoot(loggerPath, loggerVersion)]
         };
     }
