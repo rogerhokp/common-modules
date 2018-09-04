@@ -74,11 +74,9 @@ const logger = ({ object, action, payload, userId, date = Date.now() }) => {
     }
 
 };
-import CommonModule from './CommonModule';
 import AuditLoggerService from './AuditLoggerService';
 
 export {
-    CommonModule,
     AuditLoggerService,
     logger, init
 };
