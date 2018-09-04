@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import AuditLoggerModule from './AuditLoggerModule';
 
-@Module({})
+@Module()
 export default class CommonModule {
     static forRoot({ loggerPath, loggerVersion }) {
         return {

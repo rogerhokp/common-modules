@@ -2,7 +2,7 @@ import { AuditLoggerService } from './AuditLoggerService';
 import { Module } from '@nestjs/common';
 
 
-@Module({})
+@Module()
 class AuditLoggerModule {
   static forRoot(path, version) {
     const providers = [
