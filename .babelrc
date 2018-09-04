@@ -10,6 +10,7 @@
         ]
     ],
     "plugins": [
+        "node_modules/jsdoc-babel",
         "babel-plugin-transform-decorators-legacy",
         "transform-object-rest-spread"
     ]
