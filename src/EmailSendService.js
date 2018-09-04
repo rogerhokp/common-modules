@@ -18,11 +18,9 @@ export default class EmailSendService {
 
     /**
      * 
-     * @param {Array<string>} mailTos 
-     * @param {string} subject 
-     * @param {string} content 
+     * @param {{mailTos: Array<string>, subject: string, content: string}  
      */
-    send(mailTos, subject, content) {
+    send({ mailTos, subject, content }) {
         const msg = {
             to: mailTos,
             from: this.emailFrom,
