@@ -34,7 +34,7 @@ export default class EmailSendService {
         const msg = {
             to: emailTos,
             from: this.emailFrom,
-            bcc: bccs ? bccs : undefined,
+            bccs: bccs ? bccs : undefined,
             subject: subject,
             html: content,
             templateId: templateId,
