@@ -18,11 +18,11 @@ export default class EmailSendService {
 
     /**
      * 
-     * @param {{emailTos: Array<string>, subject: string, content: string, templateId:string, templateData: object, attachments: []}}  
+     * @param {{emailTos: Array<string>, subject: string, content: string, templateId:string, templateData: object, attachments: [], bccs: Array<string> }}  
      */
-    send({ emailTos, subject, content, templateId, templateData, attachments }) {
+    send({ emailTos, subject, content, templateId, templateData, attachments, bccs }) {
 
-        const eamilAttachments = attachments && attachments.map(({ path, filename }) => {
+        const emailAttachments = attachments && attachments.map(({ path, filename }) => {
             let bitmap = readFileSync(path);
             return {
                 content: new Buffer(bitmap).toString('base64'),
@@ -34,11 +34,12 @@ export default class EmailSendService {
         const msg = {
             to: emailTos,
             from: this.emailFrom,
+            bcc: bccs ? bccs : undefined,
             subject: subject,
             html: content,
             templateId: templateId,
             dynamic_template_data: templateData,
-            attachments: eamilAttachments
+            attachments: emailAttachments
         };
         return sgMail.send(msg);
     }

@@ -1,5 +1,7 @@
 let hostname, http, port, version;
-
+import AuditLoggerService from './AuditLoggerService';
+import EmailSendService from './EmailSendService';
+import moment from 'moment';
 
 
 const httpPost = ({ body, ...options }) => new Promise((resolve, reject) => {
@@ -74,12 +76,15 @@ const logger = ({ object, action, payload, userId, date = Date.now() }) => {
     }
 
 };
-import AuditLoggerService from './AuditLoggerService';
-import EmailSendService from './EmailSendService';
+
+const toHkTime = t => moment.utc(t).add(8, 'hr').clone();
+
 
 export {
     AuditLoggerService,
     EmailSendService,
-    logger, init
+    toHkTime,
+    logger,
+    init
 };
 
