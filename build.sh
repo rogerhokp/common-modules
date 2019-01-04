@@ -1,4 +1,4 @@
 #!/bin/sh
 rm -rf lib
 mkdir lib
-babel src -d lib
+./node_modules/.bin/babel src -d lib

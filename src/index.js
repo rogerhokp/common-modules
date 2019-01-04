@@ -58,6 +58,8 @@ const init = (_path, _version) => {
 
 };
 const logger = ({ object, action, payload, userId, date = Date.now() }) => {
+    console.log({ object, action, payload, userId, date });
+    return;
     try {
         httpPost({
             hostname,
